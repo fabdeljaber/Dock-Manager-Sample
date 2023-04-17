@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Explore samples of IgniteUI for Blazor components.">
+    <meta name="keywords" content="Sample, Example, Blazor, IgniteUI for Blazor, Components, Infragistics">
+    <meta name="author" content="Infragistics">
+    <title>Samples | IgniteUI for Blazor | Infragistics</title>
+    <base href="/" />
+    <link href="https://static.infragistics.com/xplatform/images/browsers/blazor.ico" rel="icon" type="image/x-icon">
+    <link href="https://static.infragistics.com/xplatform/css/samples/shared.v6.css" rel="stylesheet" />
+    <link href="https://static.infragistics.com/xplatform/css/samples/blazor.css" rel="stylesheet" />
+</head>
+
+<body>
+    <app class="app"><img class="app-loading" src="https://static.infragistics.com/xplatform/images/browsers/loading.gif" /></app>
+    <div class="app-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="app-error-dismiss">ðŸ—™</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        var savedLayout = '{"$hashCode":14,"name":"4bd1dc90-c9b0-437e-a42f-be7c36cee64c","rootPane":{"$hashCode":15,"type":"splitPane","orientation":"horizontal","panes":[{"$hashCode":16,"type":"splitPane","orientation":"vertical","panes":[{"$hashCode":17,"type":"contentPane","contentId":"content1","header":"Content Pane 1","name":"a9e82bd4-0aa6-4773-bd3b-274d73814cb6","id":"a8c1e906-f0e2-4746-9d65-a961c25346f1"},{"$hashCode":18,"type":"contentPane","contentId":"content2","header":"Unpinned Pane 1","isPinned":false,"name":"e052ebcd-2a3d-44b2-ad58-34ab31c920b0","id":"1ec90e74-39c6-48d5-ab0a-a37924c535c5"}],"name":"c510a847-3aab-4c37-9aa8-a8d214319cef","id":"fffbc692-7b09-471e-86fe-f917730f12e7"}],"name":"3feacc7e-d51a-4891-a787-ad9c29ec0062","id":"05b76648-0a70-42da-a4d3-b409c1f80f8d"},"floatingPanes":[{"$hashCode":27,"type":"splitPane","orientation":"horizontal","panes":[{"$hashCode":28,"type":"contentPane","contentId":"content12","header":"Floating Pane","name":"05b24dd5-49a4-45ae-ac6e-f70648b1e565","id":"566e7cf3-6897-4936-b310-8e14898ff1dc"}],"floatingLocation":{"$hashCode":29,"x":300,"y":200,"name":"9f34b970-5ba7-4f4c-9f83-ca92e8e1b550"},"floatingWidth":250,"floatingHeight":150,"name":"7ed8286e-82ca-44e7-91d2-22c1f21a4c78","id":"0728f352-7b20-4f94-af2d-37ac722ff090"},{"type":"splitPane","orientation":"vertical","panes":[{"$hashCode":20,"type":"tabGroupPane","panes":[{"$hashCode":21,"type":"contentPane","contentId":"content6","header":"Tab 1","name":"ebddb7b8-269a-4908-b8a4-c07e2a81061d","id":"c384e855-4b8a-45ae-ba6c-8032823eaa7b"},{"$hashCode":22,"type":"contentPane","contentId":"content7","header":"Tab 2","name":"54577150-dd2d-49e2-b5f7-a9e5a8059484","id":"f2ec1ac5-5920-48b1-ae9d-53bc1afa930b"},{"$hashCode":23,"type":"contentPane","contentId":"content8","header":"Tab 3","name":"8d9c640e-b8b2-4f29-97c7-e06231f3f7d8","id":"98128eeb-a300-4398-9b0a-730c99d74bc7"},{"$hashCode":24,"type":"contentPane","contentId":"content9","header":"Tab 4","name":"c2503770-a00e-4319-8aff-0484899676f5","id":"296e2a6a-6891-4b07-85d3-bf423258a64c"},{"$hashCode":25,"type":"contentPane","contentId":"content10","header":"Tab 5","name":"eef3617e-e849-42fe-afc0-f0066538cee4","id":"2702520f-624c-4e1b-a9f5-a181036386f2"}],"size":200,"name":"b0477c17-3f5d-458d-918b-e6e1c00729d2","id":"b91bc4ab-0ef1-4bfc-82c7-b7269bac9bbb"}],"floatingLocation":{"x":589.71875,"y":144},"floatingWidth":939.296875,"floatingHeight":327.328125,"id":"cc64efde-93a0-4b95-9523-bed7efa1d498"},{"type":"splitPane","orientation":"vertical","panes":[{"$hashCode":26,"type":"contentPane","contentId":"content11","header":"Content Pane 2","name":"07c62304-fb3a-43e1-8acb-9030cba00701","id":"209ef48d-c4ff-44b7-8a65-21942215b54a"}],"floatingLocation":{"x":457.71875,"y":257},"floatingWidth":939.296875,"floatingHeight":916,"id":"064ed31d-46d6-4464-8d37-0377b15ba958"}]}';
+
+        function loadDockManager() {
+            var dockManager = this.getDockmanager();
+
+            if (!!dockManager) 
+                dockManager.layout = JSON.parse(savedLayout);
+        }
+
+        function saveDockManager() {
+            var dockManager = this.getDockmanager();
+            var layout = JSON.stringify(dockManager.layout);
+            console.log(layout);
+            return layout;
+        }
+
+        function getDockmanager() {
+            var x = document.getElementsByClassName("igb-web-dock-manager")[0];
+            if (x == null)
+                return null;
+
+            return x.querySelector("igc-dockmanager");
+        }
+
+
+    </script>
+
+</body>
+
+</html>
